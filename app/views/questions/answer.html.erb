@@ -1,0 +1,12 @@
+
+<h4 class= "card question"><%= params[:question] %><br>-You</h4>
+ <%question = params[:question] %>
+ <% if question.include?("I am going to work") %>
+ <h2 class= "card"><%= @answer[0] %><br>-Your Coach</h2>
+ <% elsif question.end_with?("?") %>
+ <h2 class= "card"><%= @answer[1] %><br>-Your Coach</h2>
+ <% else %>
+  <h2 class= "card"> <%= @answer[2] %><br>-Your Coach</h2>
+ <% end %>
+
+<%= link_to "Ask another question!", ask_path %>
